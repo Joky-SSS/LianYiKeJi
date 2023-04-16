@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_view"
+    android:layout_width="@dimen/dp_200"
+    android:layout_height="@dimen/dp_80"
+    android:layout_margin="1dp"
+    android:background="@drawable/print_label_bg"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="1dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_qrcode"
+            android:layout_width="@dimen/dp_78"
+            android:layout_height="@dimen/dp_78"
+            android:scaleType="fitXY"
+            tools:src="@drawable/icon_qrcode" />
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="@dimen/dp_0_5"
+            android:layout_height="match_parent"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:background="@color/black" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_goods_qr_code"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLength="15"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_10"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintLeft_toRightOf="@+id/line1"
+                app:layout_constraintTop_toTopOf="@id/iv_qrcode"
+                tools:text="编号:28025" />
+
+
+<!--            <View-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="@dimen/dp_0_5"-->
+<!--                android:background="@color/black" />-->
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_goods_qr_name"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLength="15"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_10"
+                android:textStyle="bold"
+                tools:text="名称:洋流演示器" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_0_5"
+                android:background="@color/black" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_goods_qr_spac"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLength="15"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_10"
+                android:textStyle="bold"
+                tools:text="规格:按洋流分流演示" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_0_5"
+                android:background="@color/black" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_goods_qr_user"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLength="15"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_10"
+                android:textStyle="bold"
+                tools:text="保管人:李老师" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="@dimen/dp_200"
+        android:layout_height="@dimen/dp_0_5"
+        android:background="@color/black" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_20"
+        android:gravity="center"
+        android:text="※请保护学校财产,不要损坏此标签※"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_10"
+        android:textStyle="bold" />
+
+</LinearLayout>

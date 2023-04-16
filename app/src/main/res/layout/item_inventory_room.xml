@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="6dp"
+        android:background="@drawable/gray_corner8_bg"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_room_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            tools:text="房间名称房间名称房间名称" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_goods_quantity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:layout_marginEnd="8dp"
+                android:textColor="@color/color_999999"
+                android:textSize="13sp"
+                tools:text="@string/str_room_count" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_goods_amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:textColor="@color/color_999999"
+                android:textSize="13sp"
+                tools:text="@string/str_room_amount" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_profit_quantity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:textColor="@color/color_999999"
+                android:textSize="13sp"
+                android:layout_marginEnd="8dp"
+                tools:text="@string/str_profit_count" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_profit_amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:textColor="@color/color_999999"
+                android:textSize="13sp"
+                tools:text="@string/str_profit_amount" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_deficit_quantity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:textColor="@color/color_999999"
+                android:textSize="13sp"
+                android:layout_marginEnd="8dp"
+                tools:text="@string/str_deficit_count" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_deficit_amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:textColor="@color/color_999999"
+                android:textSize="13sp"
+                tools:text="@string/str_deficit_amount" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

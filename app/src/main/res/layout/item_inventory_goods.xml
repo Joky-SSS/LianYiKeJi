@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/contentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:layout_margin="6dp"
+            android:clipToPadding="false"
+            android:background="@drawable/gray_corner8_bg"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_new_old_sign"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="-16dp"
+                android:layout_marginTop="-16dp"
+                android:gravity="center"
+                android:background="@drawable/blue_circle_bg"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                tools:text="新" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_serial_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:layout_marginStart="12dp"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                tools:text="1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_good_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_toStartOf="@id/tv_good_user"
+                android:layout_toEndOf="@id/tv_serial_number"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                tools:text="物品名称三大队阿斯顿AASs" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_goods_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                android:layout_toStartOf="@+id/tv_goods_price"
+                android:maxLines="2"
+                android:textColor="@color/color_999999"
+                android:textSize="12sp"
+                tools:text="@string/str_goods_details" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_goods_rfid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:singleLine="true"
+                android:textColor="@color/color_999999"
+                android:textSize="13sp"
+                tools:text="@string/str_rfid" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_goods_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:singleLine="true"
+                android:textColor="@color/color_999999"
+                android:textSize="12sp"
+                tools:text="@string/str_unit_price" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_good_user"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:ellipsize="end"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/color_999999"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:layout_alignTop="@id/tv_good_name"
+                android:layout_alignBottom="@id/tv_good_name"
+                android:gravity="center_vertical"
+                tools:text="保管人:速度发给" />
+        </RelativeLayout>
+
+
+
+</LinearLayout>

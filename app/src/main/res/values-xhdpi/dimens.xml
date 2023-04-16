@@ -1,0 +1,14 @@
+<resources>
+	<dimen name="dp_200">180dp</dimen>
+	<dimen name="dp_80">72dp</dimen>
+	<dimen name="dp_75">67.5dp</dimen>
+	<dimen name="sp_10">9sp</dimen>
+	<dimen name="dp_0_5">0.4dp</dimen>
+	<dimen name="dp_20">18dp</dimen>
+	<dimen name="dp_1">0.9dp</dimen>
+	<dimen name="dp_110">99dp</dimen>
+	<dimen name="dp_78">70.2dp</dimen>
+	<dimen name="dp_3">2.7dp</dimen>
+	<dimen name="sp_11">9.9dp</dimen>
+
+</resources>

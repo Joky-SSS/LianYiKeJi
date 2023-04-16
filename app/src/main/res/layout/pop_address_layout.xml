@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:gravity="center_horizontal"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="请填写存放位置"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_location_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="存放位置"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_location_addres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="200dp"
+            android:minWidth="100dp"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/item_line_layout"
+            android:gravity="left"
+            android:hint="请填写存放位置"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:maxLength="20"
+            android:singleLine="true"
+            app:layout_constraintBottom_toBottomOf="@id/tv_location_hint"
+            app:layout_constraintLeft_toRightOf="@id/tv_location_hint" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_cancel"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:background="@drawable/login_btn_disable"
+            android:text="取消"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/tv_location_hint"
+            app:layout_constraintTop_toBottomOf="@id/tv_location_hint" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_confirm"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="50dp"
+            android:background="@drawable/login_btn_enable"
+            android:text="确定"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@id/bt_cancel"
+            app:layout_constraintLeft_toRightOf="@id/bt_cancel" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

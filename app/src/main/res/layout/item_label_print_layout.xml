@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_line_layout"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_goods_select"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="5dp"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/radio_uncheck_shape" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_serial_number"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/item_goods_serial_number"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/iv_goods_select"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_goods_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:singleLine="true"
+        android:textColor="@color/main_blue"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/tv_serial_number"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="计算机计算机计算机计算机计算计算机计算机计算机计算机计算" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_unit_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintRight_toLeftOf="@+id/add_sub_controller"
+        android:textColor="@color/color_444444"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_goods_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_goods_name"
+        tools:text="@string/str_unit_price_and_number" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_save_location"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/color_444444"
+        android:textSize="10sp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintRight_toLeftOf="@+id/add_sub_controller"
+        app:layout_constraintLeft_toLeftOf="@id/tv_goods_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_unit_price"
+        tools:text="@string/str_location" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_save_depository"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/color_444444"
+        android:textSize="10sp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintRight_toLeftOf="@+id/add_sub_controller"
+        app:layout_constraintLeft_toLeftOf="@id/tv_save_location"
+        app:layout_constraintTop_toBottomOf="@id/tv_save_location"
+        tools:text="@string/str_depository" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_goods_details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintRight_toLeftOf="@+id/add_sub_controller"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:textColor="@color/color_444444"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/tv_serial_number"
+        app:layout_constraintTop_toBottomOf="@id/tv_save_depository"
+        tools:text="@string/str_goods_details" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="打印数量"
+        android:textColor="@color/main_blue"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/add_sub_controller"
+        app:layout_constraintLeft_toLeftOf="@+id/add_sub_controller" />
+
+    <com.lianyi.app.weight.AddSubController
+        android:id="@+id/add_sub_controller"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

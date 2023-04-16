@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/sv_pop_title"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:sCenterTextColor="@color/color_444444"
+        app:sCenterTextSize="@dimen/sp_14"
+        app:sCenterTextString="打印设置"
+        app:sUseRipple="false" />
+
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/sv_print_open_bluetooth"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:sDividerLineColor="@color/line"
+        app:sDividerLineHeight="1dp"
+        app:sDividerLineType="both"
+        app:sLeftMaxEms="10"
+        app:sLeftTextColor="@color/color_444444"
+        app:sLeftTextSize="13sp"
+        app:sLeftTextString="开启蓝牙"
+        app:sRightViewType="switchBtn"
+        app:sTrackResource="@drawable/switch_bt_track"
+        app:sThumbResource="@drawable/switch_bt_thumb"
+        app:sSwitchIsChecked="true"
+        app:sUseRipple="false" />
+
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/sv_print_devices"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:sDividerLineColor="@color/line"
+        app:sDividerLineHeight="1dp"
+        app:sDividerLineType="bottom"
+        app:sLeftMaxEms="10"
+        app:sLeftTextColor="@color/color_444444"
+        app:sLeftTextSize="13sp"
+        app:sLeftTextString="连接打印机"
+        app:sRightMaxEms="15"
+        app:sRightTextColor="@color/main_blue"
+        app:sRightTextSize="13sp"
+        app:sRightTvDrawableRight="@drawable/icon_right_back"
+        app:sUseRipple="false"
+        tools:sRightTextString="连接打印机" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/sv_print_type"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:sDividerLineColor="@color/line"
+        app:sDividerLineHeight="1dp"
+        app:sDividerLineType="bottom"
+        app:sLeftMaxEms="10"
+        app:sLeftTextColor="@color/color_444444"
+        app:sLeftTextSize="13sp"
+        app:sLeftTextString="设置纸张类型"
+        app:sRightMaxEms="15"
+        app:sRightTextColor="@color/color_444444"
+        app:sRightTextSize="13sp"
+        app:sRightTvDrawableRight="@drawable/icon_right_back"
+        app:sUseRipple="false"
+        app:sRightTextString="间隙纸" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/sv_print_concentration"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:sDividerLineColor="@color/line"
+        app:sDividerLineHeight="1dp"
+        app:sDividerLineType="bottom"
+        app:sLeftMaxEms="10"
+        app:sLeftTextColor="@color/color_444444"
+        app:sLeftTextSize="13sp"
+        app:sLeftTextString="设置打印浓度"
+        app:sRightMaxEms="15"
+        app:sRightTextColor="@color/color_444444"
+        app:sRightTextSize="13sp"
+        app:sRightTvDrawableRight="@drawable/icon_right_back"
+        app:sUseRipple="false"
+        app:sRightTextString="正常" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/sv_print_speed"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:sDividerLineColor="@color/line"
+        app:sDividerLineHeight="1dp"
+        app:sDividerLineType="bottom"
+        app:sLeftMaxEms="10"
+        app:sLeftTextColor="@color/color_444444"
+        app:sLeftTextSize="13sp"
+        app:sLeftTextString="设置打印速度"
+        app:sRightMaxEms="15"
+        app:sRightTextColor="@color/color_444444"
+        app:sRightTextSize="13sp"
+        app:sRightTvDrawableRight="@drawable/icon_right_back"
+        app:sUseRipple="false"
+        app:sRightTextString="正常(3)" />
+
+</LinearLayout>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.wuhenzhizao.titlebar.widget.CommonTitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_10"
+            app:centerTextColor="@color/white"
+            app:centerTextSize="18sp"
+            app:centerType="textView"
+            app:leftImageResource="@drawable/icon_chevron_left"
+            app:leftType="imageButton"
+            app:rightText="添加柜子"
+            app:rightTextColor="@color/white"
+            app:rightTextSize="14sp"
+            app:rightType="textView"
+            app:showBottomLine="false"
+            app:statusBarColor="@color/main_blue"
+            app:titleBarColor="@color/main_blue"
+            tools:centerText="选择房间" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/white"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:gravity="center_vertical"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="柜子："
+                android:textColor="@color/color_444444"/>
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/cabinetTabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:tabIndicatorColor="@color/white"
+                app:tabIndicatorHeight="0dp"
+                app:tabSelectedTextColor="@color/colorPrimary"
+                app:tabTextColor="@color/color_444444"
+                app:tabMode="scrollable"
+                app:tabPaddingStart="8dp"
+                app:tabPaddingEnd="8dp"
+                app:tabMinWidth="1dp"
+                >
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="柜子1"/>
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="柜子1"/>
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="柜子1"/>
+            </com.google.android.material.tabs.TabLayout>
+        </LinearLayout>
+        <include layout="@layout/search_layout" />
+
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#fff"
+            android:layout_weight="1">
+
+            <com.scwang.smart.refresh.header.ClassicsHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <com.yanzhenjie.recyclerview.SwipeRecyclerView
+                android:id="@+id/swipe_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_goods_layout" />
+
+
+            <com.scwang.smart.refresh.footer.ClassicsFooter
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_total_of"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp_10"
+                android:gravity="left|center"
+                android:text="@string/str_total_of"
+                android:textColor="@color/color_444444"
+                android:textSize="12sp" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_save"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:background="@drawable/print_btn_enable"
+                android:text="@string/str_save"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_11" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_label_print"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/print_btn_enable"
+                android:text="@string/str_label_print"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_11" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/dp_10"
+        android:padding="5dp">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_add_goods"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/green_round_bg"
+            android:gravity="center"
+            android:text="@string/str_add_goods"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_new_goods"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/tv_add_goods"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/green_round_bg"
+            android:gravity="center"
+            android:text="@string/str_new_goods"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

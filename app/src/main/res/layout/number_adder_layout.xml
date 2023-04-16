@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_reduce"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/addsubcontroller_reduce_bg"
+        android:gravity="center"
+        android:text="一"
+        android:textColor="@color/main_blue" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_count"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:maxWidth="100dp"
+        android:inputType="number"
+        android:background="@drawable/addsubcontroller_count_bg"
+        android:gravity="center"
+        android:text="1"
+        android:maxLength="8"
+        android:textColor="#000000"
+        android:textSize="14sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_add"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/addsubcontroller_add_bg"
+        android:gravity="center"
+        android:text="十"
+        android:textColor="@color/main_blue" />
+</LinearLayout>

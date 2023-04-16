@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="248dp"
+        android:src="@drawable/icon_home_head"
+        android:scaleType="fitXY"/>
+
+    <RelativeLayout
+        android:id="@+id/layoutCheck"
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/shape_button_white_border">
+
+        <ImageView
+            android:id="@+id/icon_check"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="12dp"
+            android:src="@drawable/icon_check" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/icon_check"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@id/icon_check"
+            android:text="资产清查"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/icon_check"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="3dp"
+            android:layout_toEndOf="@id/icon_check"
+            android:text="请配合便携式条码打印机使用"
+            android:textColor="@color/color_B8B8B8"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/icon_check"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="24dp"
+            android:textColor="@color/color_999999"
+            android:text=">"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/layoutInventory"
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/shape_button_white_border">
+
+        <ImageView
+            android:id="@+id/icon_inventory"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="12dp"
+            android:src="@drawable/icon_rfid" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/icon_inventory"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@id/icon_inventory"
+            android:text="RFID盘点"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/icon_inventory"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="3dp"
+            android:layout_toEndOf="@id/icon_inventory"
+            android:text="请配合RFID盘点设备使用"
+            android:textColor="@color/color_B8B8B8"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/icon_inventory"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="24dp"
+            android:textColor="@color/color_999999"
+            android:text=">"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+
+</LinearLayout>

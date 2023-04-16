@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/item_tv_goods_code"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="物品编码"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/item_tv_goods_name"
+        android:layout_width="110dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="物品名称"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/item_tv_goods_spec"
+        android:layout_width="110dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="规格"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/item_tv_goods_unit"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="单位"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+</LinearLayout>

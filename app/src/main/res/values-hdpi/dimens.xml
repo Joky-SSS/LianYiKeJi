@@ -1,0 +1,12 @@
+<resources>
+	<dimen name="dp_200">250dp</dimen>
+	<dimen name="dp_80">100dp</dimen>
+	<dimen name="dp_75">93.7dp</dimen>
+	<dimen name="sp_10">12.5sp</dimen>
+	<dimen name="dp_0_5">0.6dp</dimen>
+	<dimen name="dp_20">25dp</dimen>
+	<dimen name="dp_1">1.2dp</dimen>
+	<dimen name="dp_110">137.5dp</dimen>
+	<dimen name="dp_78">97.5dp</dimen>
+	<dimen name="dp_3">3.8dp</dimen>
+</resources>

@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+        <com.wuhenzhizao.titlebar.widget.CommonTitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:centerText="新增物品"
+            app:centerTextColor="@color/black"
+            app:centerTextSize="18sp"
+            app:centerType="textView"
+            app:leftText="返回"
+            app:leftTextColor="@color/main_blue"
+            app:leftType="textView"
+            app:showBottomLine="false"
+            app:statusBarColor="@color/white"
+            app:titleBarColor="@color/white" />
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/background"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="物品信息"
+                android:textColor="#333333"
+                android:textSize="12sp" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.allen.library.SuperTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:sDividerLineColor="@color/line"
+                    app:sDividerLineHeight="1dp"
+                    app:sDividerLineType="bottom"
+                    app:sLeftMaxEms="10"
+                    app:sLeftTextColor="@color/color_444444"
+                    app:sLeftTextSize="13sp"
+                    app:sLeftTextString="物品编号"
+                    app:sUseRipple="false" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_goods_serial_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/item_line_layout"
+                    android:hint="@string/str_hint_goods_serial_number"
+                    android:inputType="text"
+                    android:maxWidth="200dp"
+                    android:maxLength="20"
+                    android:minWidth="100dp"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+
+            </RelativeLayout>
+
+            <!--            <com.allen.library.SuperTextView-->
+            <!--                android:id="@+id/sv_goods_name"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="50dp"-->
+            <!--                app:sDividerLineColor="@color/line"-->
+            <!--                app:sDividerLineHeight="1dp"-->
+            <!--                app:sDividerLineType="bottom"-->
+            <!--                app:sLeftMaxEms="10"-->
+            <!--                app:sLeftTextColor="@color/color_444444"-->
+            <!--                app:sLeftTextSize="13sp"-->
+            <!--                app:sLeftTextString="物品名称"-->
+            <!--                app:sRightMaxEms="20"-->
+            <!--                app:sRightTextColor="@color/color_444444"-->
+            <!--                app:sRightTextSize="13sp"-->
+            <!--                app:sRightTvDrawableRight="@drawable/icon_right_back"-->
+            <!--                app:sUseRipple="false"-->
+            <!--                tools:sRightTextString="物品名称" />-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.allen.library.SuperTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:sDividerLineColor="@color/line"
+                    app:sDividerLineHeight="1dp"
+                    app:sDividerLineType="bottom"
+                    app:sLeftMaxEms="10"
+                    app:sLeftTextColor="@color/color_444444"
+                    app:sLeftTextSize="13sp"
+                    app:sLeftTextString="物品名称"
+                    app:sUseRipple="false" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_goods_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/item_line_layout"
+                    android:hint="@string/str_hint_goods_name"
+                    android:inputType="text"
+                    android:maxWidth="200dp"
+                    android:maxLength="30"
+                    android:minWidth="100dp"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.allen.library.SuperTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:sDividerLineColor="@color/line"
+                    app:sDividerLineHeight="1dp"
+                    app:sDividerLineType="bottom"
+                    app:sLeftMaxEms="10"
+                    app:sLeftTextColor="@color/color_444444"
+                    app:sLeftTextSize="13sp"
+                    app:sLeftTextString="规格型号"
+                    app:sUseRipple="false" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_goods_specifications"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/item_line_layout"
+                    android:hint="@string/str_hint_goods_specifications"
+                    android:inputType="text"
+                    android:maxWidth="200dp"
+                    android:maxLength="320"
+                    android:minWidth="100dp"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.allen.library.SuperTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:sDividerLineColor="@color/line"
+                    app:sDividerLineHeight="1dp"
+                    app:sDividerLineType="bottom"
+                    app:sLeftMaxEms="10"
+                    app:sLeftTextColor="@color/color_444444"
+                    app:sLeftTextSize="13sp"
+                    app:sLeftTextString="单位"
+                    app:sUseRipple="false" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_goods_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/item_line_layout"
+                    android:hint="@string/str_hint_goods_unit"
+                    android:inputType="text"
+                    android:maxWidth="200dp"
+                    android:maxLength="20"
+                    android:minWidth="100dp"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.allen.library.SuperTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:sDividerLineColor="@color/line"
+                    app:sDividerLineHeight="1dp"
+                    app:sDividerLineType="bottom"
+                    app:sLeftMaxEms="10"
+                    app:sLeftTextColor="@color/color_444444"
+                    app:sLeftTextSize="13sp"
+                    app:sLeftTextString="数量"
+                    app:sUseRipple="false" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/et_goods_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="end"
+                    android:inputType="number"
+                    android:maxWidth="200dp"
+                    android:maxLength="8"
+                    android:minWidth="100dp"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:text="1"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.allen.library.SuperTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:sDividerLineColor="@color/line"
+                    app:sDividerLineHeight="1dp"
+                    app:sDividerLineType="bottom"
+                    app:sLeftMaxEms="10"
+                    app:sLeftTextColor="@color/color_444444"
+                    app:sLeftTextSize="13sp"
+                    app:sLeftTextString="单价"
+                    app:sRightTextSize="13sp"
+                    app:sRightTextString="元"
+                    app:sUseRipple="false" />
+
+                <com.lianyi.app.weight.DecimalEditTextView
+                    android:id="@+id/et_goods_unit_price"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="40dp"
+                    android:background="@drawable/item_line_layout"
+                    android:hint="@string/str_hint_goods_unit_price"
+                    android:inputType="number"
+                    android:maxWidth="200dp"
+                    android:minWidth="100dp"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    app:public_decimal_upper="1000000"
+                    android:textSize="14sp"
+                    tools:text="11.22" />
+
+
+            </RelativeLayout>
+
+
+            <com.allen.library.SuperTextView
+                android:id="@+id/sv_goods_subject"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:sDividerLineColor="@color/line"
+                app:sDividerLineHeight="1dp"
+                app:sDividerLineType="bottom"
+                app:sLeftMaxEms="10"
+                app:sLeftTextColor="@color/color_444444"
+                app:sLeftTextSize="13sp"
+                app:sLeftTextString="科目"
+                app:sRightMaxEms="15"
+                app:sRightTextColor="@color/color_444444"
+                app:sRightTextSize="13sp"
+                app:sRightTvDrawableRight="@drawable/icon_right_back"
+                app:sUseRipple="false"
+                tools:sRightTextString="科目" />
+
+
+            <com.allen.library.SuperTextView
+                android:id="@+id/sv_goods_use"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:sDividerLineColor="@color/line"
+                app:sDividerLineHeight="1dp"
+                app:sDividerLineType="bottom"
+                app:sLeftMaxEms="10"
+                app:sLeftTextColor="@color/color_444444"
+                app:sLeftTextSize="13sp"
+                app:sLeftTextString="用途"
+                app:sRightMaxEms="15"
+                app:sRightTextColor="@color/color_444444"
+                app:sRightTextSize="13sp"
+                app:sRightTvDrawableRight="@drawable/icon_right_back"
+                app:sUseRipple="false"
+                tools:sRightTextString="用途" />
+            <com.allen.library.SuperTextView
+                android:id="@+id/sv_goods_attribute"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:sDividerLineColor="@color/line"
+                app:sDividerLineHeight="1dp"
+                app:sDividerLineType="bottom"
+                app:sLeftMaxEms="10"
+                app:sLeftTextColor="@color/color_444444"
+                app:sLeftTextSize="13sp"
+                app:sLeftTextString="资产属性"
+                app:sRightMaxEms="15"
+                app:sRightTextColor="@color/color_444444"
+                app:sRightTextSize="13sp"
+                app:sRightTvDrawableRight="@drawable/icon_right_back"
+                app:sUseRipple="false"
+                app:sRightTextString="固定资产" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:text="RFID识别码"
+                    android:textColor="@color/color_444444"
+                    android:layout_marginStart="10dp"
+                    android:textSize="13sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/et_goods_barcode"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="12dp"
+                    android:digits="0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
+                    android:gravity="end"
+                    android:maxWidth="200dp"
+                    android:minWidth="100dp"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    tools:text="sdas1123" />
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/background"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="位置信息"
+                android:textColor="#333333"
+                android:textSize="12sp" />
+            <com.allen.library.SuperTextView
+                android:id="@+id/sv_goods_location"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:sDividerLineColor="@color/line"
+                app:sDividerLineHeight="1dp"
+                app:sDividerLineType="bottom"
+                app:sLeftMaxEms="10"
+                app:sLeftTextColor="@color/color_444444"
+                app:sLeftTextSize="13sp"
+                app:sLeftTextString="存放位置"
+                app:sRightIconRes="@drawable/icon_right_back"
+                app:sRightMaxEms="20"
+                app:sRightTextColor="@color/color_444444"
+                app:sRightTextSize="13sp"
+                app:sUseRipple="false"
+                tools:sRightTextString="存放位置" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.allen.library.SuperTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:sDividerLineColor="@color/line"
+                    app:sDividerLineHeight="1dp"
+                    app:sDividerLineType="bottom"
+                    app:sLeftMaxEms="10"
+                    app:sLeftTextColor="@color/color_444444"
+                    app:sLeftTextSize="13sp"
+                    app:sLeftTextString="保管人"
+                    app:sUseRipple="false" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_goods_depository"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/item_line_layout"
+                    android:hint="@string/str_hint_goods_depository"
+                    android:inputType="text"
+                    android:maxWidth="200dp"
+                    android:maxLength="20"
+                    android:minWidth="100dp"
+                    android:padding="5dp"
+
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+
+            </RelativeLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/background"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="采购信息"
+                android:textColor="#333333"
+                android:textSize="12sp" />
+            <com.allen.library.SuperTextView
+                android:id="@+id/sv_goods_date"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                app:sDividerLineColor="@color/line"
+                app:sDividerLineHeight="1dp"
+                app:sDividerLineType="bottom"
+                app:sLeftMaxEms="10"
+                app:sLeftTextColor="@color/color_444444"
+                app:sLeftTextSize="13sp"
+                app:sLeftTextString="购入日期"
+                app:sRightMaxEms="15"
+                app:sRightTextColor="@color/color_444444"
+                app:sRightTextSize="13sp"
+                app:sRightTvDrawableRight="@drawable/icon_right_back"
+                app:sUseRipple="false"
+                tools:sRightTextString="购入日期" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.allen.library.SuperTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:sDividerLineColor="@color/line"
+                    app:sDividerLineHeight="1dp"
+                    app:sDividerLineType="bottom"
+                    app:sLeftMaxEms="10"
+                    app:sLeftTextColor="@color/color_444444"
+                    app:sLeftTextSize="13sp"
+                    app:sLeftTextString="质保期"
+                    app:sRightTextSize="13sp"
+                    app:sRightTextString="月"
+                    app:sUseRipple="false" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_goods_exp"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="40dp"
+                    android:background="@drawable/item_line_layout"
+                    android:hint="@string/str_hint_goods_exp"
+                    android:inputType="number"
+                    android:maxWidth="200dp"
+                    android:maxLength="3"
+                    android:minWidth="100dp"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.allen.library.SuperTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:sDividerLineColor="@color/line"
+                    app:sDividerLineHeight="1dp"
+                    app:sDividerLineType="bottom"
+                    app:sLeftMaxEms="10"
+                    app:sLeftTextColor="@color/color_444444"
+                    app:sLeftTextSize="13sp"
+                    app:sLeftTextString="使用年限"
+                    app:sUseRipple="false" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_goods_mfg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/item_line_layout"
+                    android:hint="@string/str_hint_goods_mfg"
+                    android:inputType="number"
+                    android:maxWidth="200dp"
+                    android:maxLength="2"
+                    android:minWidth="100dp"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.allen.library.SuperTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:sDividerLineColor="@color/line"
+                    app:sDividerLineHeight="1dp"
+                    app:sDividerLineType="bottom"
+                    app:sLeftMaxEms="10"
+                    app:sLeftTextColor="@color/color_444444"
+                    app:sLeftTextSize="13sp"
+                    app:sLeftTextString="品牌"
+                    app:sUseRipple="false" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_goods_brand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/item_line_layout"
+                    android:hint="@string/str_hint_goods_brand"
+                    android:inputType="text"
+                    android:maxWidth="200dp"
+                    android:maxLength="40"
+                    android:minWidth="100dp"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.allen.library.SuperTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:sDividerLineColor="@color/line"
+                    app:sDividerLineHeight="1dp"
+                    app:sDividerLineType="bottom"
+                    app:sLeftMaxEms="10"
+                    app:sLeftTextColor="@color/color_444444"
+                    app:sLeftTextSize="13sp"
+                    app:sLeftTextString="供应商"
+                    app:sUseRipple="false" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_goods_supplier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/item_line_layout"
+                    android:hint="@string/str_hint_goods_supplier"
+                    android:inputType="text"
+                    android:maxWidth="200dp"
+                    android:maxLength="40"
+                    android:minWidth="100dp"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.allen.library.SuperTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:sDividerLineColor="@color/line"
+                    app:sDividerLineHeight="1dp"
+                    app:sDividerLineType="bottom"
+                    app:sLeftMaxEms="10"
+                    app:sLeftTextColor="@color/color_444444"
+                    app:sLeftTextSize="13sp"
+                    app:sLeftTextString="联系人"
+                    app:sUseRipple="false" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_goods_contact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/item_line_layout"
+                    android:hint="@string/str_hint_goods_contact"
+                    android:inputType="text"
+                    android:maxWidth="200dp"
+                    android:maxLength="20"
+                    android:minWidth="100dp"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.allen.library.SuperTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:sDividerLineColor="@color/line"
+                    app:sDividerLineHeight="1dp"
+                    app:sDividerLineType="bottom"
+                    app:sLeftMaxEms="10"
+                    app:sLeftTextColor="@color/color_444444"
+                    app:sLeftTextSize="13sp"
+                    app:sLeftTextString="联系电话"
+                    app:sUseRipple="false" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_goods_contact_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/item_line_layout"
+                    android:hint="@string/str_hint_goods_contact_phone"
+                    android:inputType="text"
+                    android:maxWidth="200dp"
+                    android:maxLength="15"
+                    android:minWidth="100dp"
+                    android:padding="5dp"
+                    android:digits="1234567890-"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+
+            </RelativeLayout>
+
+
+
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_save"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/print_btn_enable"
+            android:text="@string/str_save"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_11" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_continue"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/print_btn_enable"
+            android:text="@string/str_continue"
+            android:layout_marginEnd="20dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_11" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

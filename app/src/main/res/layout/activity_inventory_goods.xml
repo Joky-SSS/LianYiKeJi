@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.InventoryGoodsActivity">
+
+    <com.wuhenzhizao.titlebar.widget.CommonTitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_10"
+        app:centerTextColor="@color/black"
+        app:centerTextSize="18sp"
+        app:centerType="textView"
+        app:leftText="返回"
+        app:leftTextColor="@color/colorPrimary"
+        app:leftTextSize="14sp"
+        app:leftType="textView"
+        app:showBottomLine="false"
+        app:statusBarColor="@color/white"
+        app:titleBarColor="@color/white"
+        tools:centerText="选择房间" />
+
+    <include
+        android:id="@+id/include_search_layout"
+        layout="@layout/search_layout"
+        android:layout_below="@id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/dp_10"
+        android:layout_height="30dp"/>
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/include_search_layout"
+        android:background="@color/background">
+
+        <com.scwang.smart.refresh.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <com.yanzhenjie.recyclerview.SwipeRecyclerView
+            android:id="@+id/swipe_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_inventory_goods"
+            tools:itemCount="4"/>
+
+
+        <com.scwang.smart.refresh.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_rfid"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_above="@id/tv_add_goods"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/green_round_bg"
+        android:gravity="center"
+        android:text="RFID"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_add_goods"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_above="@id/tv_new_goods"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="18dp"
+        android:background="@drawable/green_round_bg"
+        android:gravity="center"
+        android:text="@string/str_add_goods"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_new_goods"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_above="@id/tv_scan"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="18dp"
+        android:background="@drawable/green_round_bg"
+        android:gravity="center"
+        android:text="@string/str_new_goods"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_scan"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/green_round_bg"
+        android:gravity="center"
+        android:text="@string/str_scan"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+</RelativeLayout>

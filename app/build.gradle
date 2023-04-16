@@ -1,0 +1,161 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        applicationId "com.lianyi.app"
+        minSdkVersion 23
+        targetSdkVersion 30  //需要为30或以上，才能开启盘点设备的扫描模块
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        signingConfigs {
+            debug {
+                storeFile file('keystore\\lykj.jks')
+                storePassword 'lykj1234'
+                keyAlias = 'lykj'
+                keyPassword 'lykj1234'
+            }
+            release {
+                storeFile file('keystore\\lykj.jks')
+                storePassword 'lykj1234'
+                keyAlias = 'lykj'
+                keyPassword 'lykj1234'
+            }
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [
+                        //必须，告知RxHttp你依赖的okhttp版本，目前已适配 v3.12.0 - v4.7.2版本  (v4.3.0除外)
+                        rxhttp_okhttp      : '4.7.2',
+                        //使用asXxx方法时必须，告知RxHttp你依赖的rxjava版本，可传入rxjava2、rxjava3
+                        rxhttp_rxjava      : 'rxjava2',
+                        rxhttp_package     : 'rxhttp',  //非必须，指定RxHttp相关类的生成路径，即包名
+
+                        AROUTER_MODULE_NAME: project.getName()
+                ]
+            }
+
+
+        }
+        ndk {
+            abiFilters 'arm64-v8a', 'armeabi-v7a'
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    flavorDimensions ("func")
+    productFlavors{
+        assets {
+            dimension "func"
+            buildConfigField("boolean","hasRFID","false")
+        }
+        rfid{
+            dimension "func"
+            buildConfigField("boolean","hasRFID","true")
+        }
+    }
+}
+
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar","*.aar"])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+//    implementation 'me.jessyan:autosize:1.2.1'
+
+    implementation 'com.google.android.material:material:1.3.0-alpha01'
+    //导航栏
+    implementation 'com.wuhenzhizao:titlebar:1.2.0'
+
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    implementation 'com.tencent:mmkv:1.2.11'
+
+    implementation 'com.jakewharton:butterknife:10.2.1'
+
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+
+    implementation 'com.github.arcadefire:nice-spinner:1.4.4'
+
+    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
+
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+
+    implementation 'com.blankj:utilcodex:1.29.0'
+
+    implementation 'com.king.zxing:zxing-lite:1.1.9-androidx'
+
+
+    //以下3个为必须，
+    implementation 'com.ljx.rxhttp:rxhttp:2.2.7'
+    implementation 'com.squareup.okhttp3:okhttp:4.7.2'
+    annotationProcessor 'com.ljx.rxhttp:rxhttp-compiler:2.2.7'
+    //生成RxHttp类，非kotlin项目，请使用annotationProcessor代替kapt
+    implementation 'com.ljx.rxlife:rxlife-coroutine:2.0.0' //管理协程生命周期，页面销毁，关闭请求
+
+    //rxjava2
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.8'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'com.ljx.rxlife2:rxlife-rxjava:2.0.0' //管理RxJava2生命周期，页面销毁，关闭请求
+
+    implementation 'com.github.mamumu:mmDialog:1.2.0'
+    //科目单选
+    implementation 'com.github.1993hzw:Androids:1.3'
+
+    implementation 'com.alibaba:arouter-api:1.5.0'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
+
+
+    implementation 'com.scwang.smart:refresh-layout-kernel:2.0.1'      //核心必须依赖
+    implementation 'com.scwang.smart:refresh-header-classics:2.0.1'    //经典刷新头
+    implementation 'com.scwang.smart:refresh-footer-classics:2.0.1'    //经典加载
+    //侧滑
+    implementation 'com.yanzhenjie.recyclerview:x:1.3.2'
+    implementation 'com.lxj:xpopup:2.0.6'
+    implementation 'com.github.lygttpod:SuperTextView:2.4.2'
+
+    implementation 'com.contrarywind:Android-PickerView:4.1.9'
+
+    implementation 'com.squareup:otto:1.3.8'
+
+    implementation 'cn.bingoogolapple:bga-qrcode-zxing:1.3.7'
+
+//    implementation(name: '3.1.5-release', ext: 'aar')
+//    implementation(name: 'UHFJar_V1.4.02', ext: 'aar')
+//    implementation(name: 'image-2.0.10-release', ext: 'aar')
+    //蓝牙连接库
+    implementation 'com.inuker.bluetooth:library:1.4.0'
+    //经典蓝牙
+    implementation 'com.github.AlexLiuSheng:EasyBluetoothFrame:1.0.4'
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+}

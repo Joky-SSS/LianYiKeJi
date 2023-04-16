@@ -4,3 +4,5 @@
 /app/build/
 /app/debug/
 /app/release/
+/app/build/
+/app/build/generated/

@@ -21,7 +21,6 @@ import com.blankj.utilcode.util.GsonUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
-import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 import com.lianyi.app.model.CabinetBean;
 import com.lxj.xpopup.XPopup;
@@ -102,7 +101,9 @@ public class GoodsActivity extends BaseActvity implements CommonTitleBar.OnTitle
     AppCompatImageView ivSearch;
     @BindView(R.id.cabinetTabLayout)
     TabLayout cabinetTabLayout;
-    private List<CabinetBean> tabDataList = new ArrayList<>();
+    private List<CabinetBean> cabinetBeanList = new ArrayList<>();
+    private CabinetBean selectCabinet;
+
     @Override
     public int getLayoutId() {
         return R.layout.good_list_layout;
@@ -118,8 +119,6 @@ public class GoodsActivity extends BaseActvity implements CommonTitleBar.OnTitle
 
     @Override
     public void initData() {
-        getSearchGood(true, queryStr, mListBean.getId());
-
         etSearchView.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -136,6 +135,7 @@ public class GoodsActivity extends BaseActvity implements CommonTitleBar.OnTitle
                 queryStr = s.toString();
             }
         });
+        getCabinetList(mListBean.getId());
     }
 
     @Override
@@ -176,6 +176,7 @@ public class GoodsActivity extends BaseActvity implements CommonTitleBar.OnTitle
                 .add("taskId", mTaskBean.getId())
                 .add("pageNo", pageNo)
                 .add("pageSize", pageSize)
+                .add("cabinetId", selectCabinet.getId())
                 .asResponse(GoodsListBean.class)
                 .doOnSubscribe(disposable -> showLoading())  //请求开始，当前在主线程回调
                 .doFinally(() -> {
@@ -220,30 +221,35 @@ public class GoodsActivity extends BaseActvity implements CommonTitleBar.OnTitle
         mGoodsListAdapter.setOnItemClickListener(this);
     }
 
-    private void initTabLayout(){
+    private void initTabLayout() {
         cabinetTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                //TODO get item by tab
+                int position = cabinetTabLayout.getSelectedTabPosition();
+                selectCabinet = cabinetBeanList.get(position);
+                refreshLayout.autoRefresh();
             }
 
             @Override
-            public void onTabUnselected(TabLayout.Tab tab) {}
+            public void onTabUnselected(TabLayout.Tab tab) {
+            }
 
             @Override
-            public void onTabReselected(TabLayout.Tab tab) {}
+            public void onTabReselected(TabLayout.Tab tab) {
+            }
         });
         setTabData();
     }
 
-    private void setTabData(){
+    private void setTabData() {
         cabinetTabLayout.removeAllTabs();
-        for (CabinetBean cabinet : tabDataList){
+        for (CabinetBean cabinet : cabinetBeanList) {
             TabLayout.Tab tab = cabinetTabLayout.newTab();
             tab.setText(cabinet.getCabinetName());
             cabinetTabLayout.addTab(tab);
         }
     }
+
     /**
      * 创建菜单 要在setAdapter之前设置
      */
@@ -297,13 +303,18 @@ public class GoodsActivity extends BaseActvity implements CommonTitleBar.OnTitle
                 .asList(CabinetBean.class)
                 .as(RxLife.asOnMain(this))
                 .subscribe(cabinetList -> {
-
+                    int currentTabIndex = cabinetTabLayout.getSelectedTabPosition();
+                    cabinetBeanList.clear();
+                    cabinetBeanList.addAll(cabinetList);
+                    setTabData();
+                    if (currentTabIndex != 0) {
+                        cabinetTabLayout.selectTab(cabinetTabLayout.getTabAt(0));
+                    }
                 }, throwable -> {
                     HttpStatusCodeException exception = (HttpStatusCodeException) throwable;
                     String errorMsg = exception.getResult(); //拿到msg字段
                     Response response = GsonUtils.fromJson(errorMsg, Response.class);
                     showToastFailure(response.getMessage());
-
                 });
     }
 

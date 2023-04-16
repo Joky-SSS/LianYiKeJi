@@ -75,8 +75,8 @@
             android:id="@+id/refreshLayout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="#fff"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="#fff">
 
             <com.scwang.smart.refresh.header.ClassicsHeader
                 android:layout_width="match_parent"
@@ -89,12 +89,46 @@
                 android:layout_height="wrap_content"
                 android:nestedScrollingEnabled="false"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/item_goods_layout" />
+                tools:listitem="@layout/item_goods_layout"
+                />
 
 
             <com.scwang.smart.refresh.footer.ClassicsFooter
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp_10"
+                android:padding="5dp">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_add_goods"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/green_round_bg"
+                    android:gravity="center"
+                    android:text="@string/str_add_goods"
+                    android:textColor="@color/white" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_new_goods"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/tv_add_goods"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/green_round_bg"
+                    android:gravity="center"
+                    android:text="@string/str_new_goods"
+                    android:textColor="@color/white" />
+
+            </RelativeLayout>
         </com.scwang.smart.refresh.layout.SmartRefreshLayout>
 
 
@@ -145,39 +179,5 @@
         </LinearLayout>
 
     </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="@dimen/dp_10"
-        android:padding="5dp">
-
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_add_goods"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:background="@drawable/green_round_bg"
-            android:gravity="center"
-            android:text="@string/str_add_goods"
-            android:textColor="@color/white" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_new_goods"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_below="@id/tv_add_goods"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/green_round_bg"
-            android:gravity="center"
-            android:text="@string/str_new_goods"
-            android:textColor="@color/white" />
-
-    </RelativeLayout>
 
 </RelativeLayout>

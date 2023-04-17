@@ -39,6 +39,18 @@ public class LabelTemplatePopup extends BottomPopupView {
                     }
                     dismiss();
                     break;
+                case R.id.rb_label_type_jxyq2:
+                    if (mPrintTypeListener != null) {
+                        mPrintTypeListener.onSelectPrintType(Constant.JXYQ_TYPE2);
+                    }
+                    dismiss();
+                    break;
+                case R.id.rb_label_type_jxyq3:
+                    if (mPrintTypeListener != null) {
+                        mPrintTypeListener.onSelectPrintType(Constant.JXYQ_TYPE3);
+                    }
+                    dismiss();
+                    break;
                 case R.id.rb_label_type_xxdj_1:
                     if (mPrintTypeListener != null) {
                         mPrintTypeListener.onSelectPrintType(Constant.XXDJ_TYPE_1);

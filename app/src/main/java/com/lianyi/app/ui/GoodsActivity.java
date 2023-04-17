@@ -221,6 +221,9 @@ public class GoodsActivity extends BaseActvity implements CommonTitleBar.OnTitle
         mGoodsListAdapter.setOnItemClickListener(this);
     }
 
+    /**
+     * 初始化柜子列表控件
+     */
     private void initTabLayout() {
         cabinetTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -241,11 +244,14 @@ public class GoodsActivity extends BaseActvity implements CommonTitleBar.OnTitle
         setTabData();
     }
 
+    /**
+     * 设置柜子数据
+     */
     private void setTabData() {
         cabinetTabLayout.removeAllTabs();
         for (CabinetBean cabinet : cabinetBeanList) {
             TabLayout.Tab tab = cabinetTabLayout.newTab();
-            tab.setText(cabinet.getCabinetName());
+            tab.setText(cabinet.getName());
             cabinetTabLayout.addTab(tab);
         }
     }
@@ -293,14 +299,14 @@ public class GoodsActivity extends BaseActvity implements CommonTitleBar.OnTitle
     }
 
     /**
-     * 获取柜子编码
+     * 获取柜子列表
      *
      * @param buildingId
      */
     private void getCabinetList(String buildingId) {
         RxHttp.get(ApiService.API_GET_CABINET_LIST)
                 .add("buildingId", buildingId)
-                .asList(CabinetBean.class)
+                .asResponseList(CabinetBean.class)
                 .as(RxLife.asOnMain(this))
                 .subscribe(cabinetList -> {
                     int currentTabIndex = cabinetTabLayout.getSelectedTabPosition();

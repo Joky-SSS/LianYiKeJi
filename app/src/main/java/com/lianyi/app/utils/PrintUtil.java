@@ -38,11 +38,24 @@ public class PrintUtil {
         }
 
         @Override
+        public void onRfidReadStatus(int i) {
+
+        }
+
+        @Override
         public void onHeartDisConnect() {
 
         }
 
+        @Override
+        public void onFirmErrors() {
 
+        }
+
+        @Override
+        public void onPrinterIsFree(int i) {
+
+        }
     };
 
 

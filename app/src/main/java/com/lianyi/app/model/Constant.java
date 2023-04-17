@@ -26,6 +26,8 @@ public final class Constant {
 
     //教学仪器 模板类型
     public static final int JXYQ_TYPE = 1;
+    public static final int JXYQ_TYPE2 = 4;
+    public static final int JXYQ_TYPE3 = 5;
     //信息电教 模板类型
     public static final int XXDJ_TYPE_1 = 2;
 

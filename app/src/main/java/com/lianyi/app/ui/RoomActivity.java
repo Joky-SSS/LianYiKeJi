@@ -106,7 +106,6 @@ public class RoomActivity extends BaseActvity implements CommonTitleBar.OnTitleB
         mRoomTypeAdapter.setMode(EasyAdapter.Mode.SINGLE_SELECT);
         rvRoomTypeTag.setAdapter(mRoomTypeAdapter);
 
-        initGridRecycleView(rvRoomList, 3, 5);
         mRoomListAdapter = new RoomListAdapter(null);
         rvRoomList.setAdapter(mRoomListAdapter);
 

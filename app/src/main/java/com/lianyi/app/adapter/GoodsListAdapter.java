@@ -15,6 +15,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
+import cn.forward.androids.views.ShapeImageView;
+
 /**
  * @ClassName: GoodsListAdapter
  * @Description: 物品列表适配器
@@ -28,7 +30,7 @@ public class GoodsListAdapter extends BaseQuickAdapter<GoodsBean, BaseViewHolder
 
     @Override
     protected void convert(@NotNull BaseViewHolder viewHolder, GoodsBean goodsBean) {
-        AppCompatImageView ivNewAngle = viewHolder.getView(R.id.iv_new_angle);
+        ShapeImageView ivNewAngle = viewHolder.getView(R.id.iv_new_angle);
         if (goodsBean.getNewMark().equals("Y")) {
             ivNewAngle.setVisibility(View.VISIBLE);
         } else {

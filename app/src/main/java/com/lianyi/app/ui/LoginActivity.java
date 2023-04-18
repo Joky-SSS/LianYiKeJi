@@ -97,8 +97,8 @@ public class LoginActivity extends BaseActvity implements OnSpinnerItemSelectedL
         RxHttp.get(ApiService.API_ADDRESS)
                 .setDomainToIportalIfAbsent()
                 //TODO test
-//                .add("snCode", DeviceUtils.getAndroidID())
-                .add("snCode", "baa50d7b655fa9c5")
+                .add("snCode", DeviceUtils.getAndroidID())
+//                .add("snCode", "baa50d7b655fa9c5")
                 .asResponseList(NodeBean.class)
                 .doOnSubscribe(disposable -> showLoading())  //请求开始，当前在主线程回调
                 .doFinally(this::hideLoading) //请求结束，当前在主线程回调

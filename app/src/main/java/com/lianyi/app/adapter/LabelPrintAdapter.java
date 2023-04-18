@@ -42,6 +42,7 @@ public class LabelPrintAdapter extends BaseQuickAdapter<GoodsBean, BaseViewHolde
         goodsBean.setPrintCount((int) Double.parseDouble(goodsBean.getTargetQuantity()));
         AddSubController addSubController = viewHolder.getView(R.id.add_sub_controller);
         addSubController.setPosition(viewHolder.getLayoutPosition())    // 传入当前位置，一定要传，不然数据会错乱
+                .setBuyMin(1)
                 .setCurrentNumber(goodsBean.getPrintCount()).
                 setOnChangeValueListener((value, position) -> {
                     getData().get(position).setTargetQuantity(String.valueOf(value));

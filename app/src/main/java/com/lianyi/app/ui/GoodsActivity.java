@@ -349,6 +349,7 @@ public class GoodsActivity extends BaseActvity implements CommonTitleBar.OnTitle
                                     Response response = GsonUtils.fromJson(cabinetBean, Response.class);
                                     if (response.getCode() == 0) {
                                         showToastSuccess("柜子创建成功");
+                                        getCabinetList(mListBean.getId());
                                     } else {
                                         showToastFailure(response.getMessage());
                                     }
@@ -374,6 +375,7 @@ public class GoodsActivity extends BaseActvity implements CommonTitleBar.OnTitle
                 ARouter.getInstance().build(RoutePath.PATH_SELECT_GOOD)
                         .withParcelable(Constant.ROOM_BEAN, mListBean)
                         .withParcelable(Constant.TASK, mTaskBean)
+                        .withString(Constant.CABINET_ID,selectCabinet.getId())
                         .navigation();
                 break;
             case R.id.tv_new_goods:
@@ -381,6 +383,7 @@ public class GoodsActivity extends BaseActvity implements CommonTitleBar.OnTitle
                         .withParcelable(Constant.ROOM_BEAN, mListBean)
                         .withParcelable(Constant.TASK, mTaskBean)
                         .withBoolean(Constant.INSERT, true)
+                        .withString(Constant.CABINET_ID,selectCabinet.getId())
                         .navigation();
                 break;
             case R.id.bt_save:

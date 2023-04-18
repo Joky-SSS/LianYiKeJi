@@ -8,6 +8,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 
 import androidx.appcompat.widget.AppCompatButton;
@@ -73,8 +74,8 @@ public class GoodsDetailsActivity extends BaseActvity implements CommonTitleBar.
     TaskBean mTaskBean;
     @BindView(R.id.title_bar)
     CommonTitleBar titleBar;
-    @BindView(R.id.sv_goods_serial_number)
-    SuperTextView svGoodsSerialNumber;
+    @BindView(R.id.et_goods_serial_number)
+    EditText etGoodsSerialNumber;
     @BindView(R.id.sv_goods_name)
     SuperTextView svGoodsName;
     @BindView(R.id.sv_goods_specifications)
@@ -175,7 +176,7 @@ public class GoodsDetailsActivity extends BaseActvity implements CommonTitleBar.
      * @param goodsBean
      */
     private void initGoods(GoodsBean goodsBean) {
-        svGoodsSerialNumber.setRightString(goodsBean.getCode());
+        etGoodsSerialNumber.setText(goodsBean.getCode());
         svGoodsName.setRightString(goodsBean.getName());
         svGoodsSpecifications.setRightString(goodsBean.getSpec());
         svGoodsUnit.setRightString(goodsBean.getUom());
@@ -247,7 +248,7 @@ public class GoodsDetailsActivity extends BaseActvity implements CommonTitleBar.
      * 更新数据
      */
     private void updateGoods() {
-        mGoodsBean.setCode(svGoodsSerialNumber.getRightString());
+        mGoodsBean.setCode(etGoodsSerialNumber.getText().toString());
         mGoodsBean.setContainerId(cabinetId);
         mGoodsBean.setName(svGoodsName.getRightString());
         mGoodsBean.setSpec(svGoodsSpecifications.getRightString());

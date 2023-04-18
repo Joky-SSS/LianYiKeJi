@@ -23,7 +23,8 @@ public final class Constant {
     public static final String GOODS_ID = "goods_id";
     //房间ID
     public static final String BUILDING_ID = "buildingId";
-
+    //柜子ID
+    public static final String CABINET_ID = "cabinetId";
     //教学仪器 模板类型
     public static final int JXYQ_TYPE = 1;
     public static final int JXYQ_TYPE2 = 4;

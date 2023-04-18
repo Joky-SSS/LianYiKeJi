@@ -32,29 +32,26 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="200dp"
                 android:layout_height="100dp"
-                android:src="@mipmap/u828" />
+                android:src="@drawable/jxyq1" />
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="200dp"
                 android:layout_height="100dp"
-                android:src="@mipmap/u828" />
+                android:src="@drawable/jxyq2" />
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="200dp"
                 android:layout_height="100dp"
-                android:src="@mipmap/u828" />
+                android:src="@drawable/jxyq3" />
 
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="@dimen/dp_10"
-                android:layout_marginBottom="@dimen/dp_10"
-                android:src="@mipmap/u824" />
+                android:layout_height="125dp"
+                android:src="@drawable/xxdj1" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_marginBottom="@dimen/dp_10"
-                android:src="@mipmap/u824" />
+                android:layout_height="125dp"
+                android:src="@drawable/xxdj2" />
 
         </LinearLayout>
 
@@ -123,7 +120,7 @@
                     android:gravity="center"
                     android:layoutDirection="ltr"
                     android:text="教学仪器标签3"
-                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_20"
                     android:textColor="@drawable/text_color_select"
                     android:textDirection="ltr" />
 
@@ -143,7 +140,7 @@
                     android:button="@drawable/oval_checkbox_style"
                     android:layoutDirection="ltr"
                     android:text="信息电教标签1"
-                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_20"
                     android:textColor="@drawable/text_color_select"
                     android:textDirection="ltr" />
 

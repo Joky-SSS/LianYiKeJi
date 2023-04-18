@@ -76,6 +76,8 @@ public class SelectGoodsActivity extends BaseActvity implements RadioGroup.OnChe
     RoomListBean.ListBean mListBean;
     @Autowired(name = Constant.TASK)
     TaskBean mTaskBean;
+    @Autowired(name = Constant.CABINET_ID)
+    String cabinetId;
     SubjectTagAdapter mSubjectTagAdapter;
     @BindView(R.id.title_bar)
     CommonTitleBar titleBar;
@@ -320,6 +322,7 @@ public class SelectGoodsActivity extends BaseActvity implements RadioGroup.OnChe
                 .add("ids", ids)
                 .add("buildingId", buildingId)
                 .add("taskId", mTaskBean.getId())
+                .add("cabinetId",cabinetId)
                 .asResponse(String.class)
                 .doOnSubscribe(disposable -> showLoading())  //请求开始，当前在主线程回调
                 .doFinally(this::hideLoading)
@@ -345,6 +348,7 @@ public class SelectGoodsActivity extends BaseActvity implements RadioGroup.OnChe
         RxHttp.get(ApiService.API_GOODS_COPY)
                 .add("ids", goodsId)
                 .add("buildingId", buildingId)
+                .add(cabinetId,cabinetId)
                 .asResponse(String.class)
                 .doOnSubscribe(disposable -> showLoading())  //请求开始，当前在主线程回调
                 .doFinally(this::hideLoading)

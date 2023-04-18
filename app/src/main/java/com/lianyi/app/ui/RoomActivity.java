@@ -147,6 +147,7 @@ public class RoomActivity extends BaseActvity implements CommonTitleBar.OnTitleB
     public void getSelectGoods(BusData busData) {
         switch (busData.getTag()) {
             case OTTOTags.REFRESH_TAGS:
+            case OTTOTags.SELECT_GOODS_TAGS:
                 refreshLayout.autoRefresh();
                 break;
             default:
@@ -154,7 +155,6 @@ public class RoomActivity extends BaseActvity implements CommonTitleBar.OnTitleB
         }
 
     }
-
 
     /**
      * 获取科目

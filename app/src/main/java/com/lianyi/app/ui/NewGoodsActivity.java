@@ -1,6 +1,7 @@
 package com.lianyi.app.ui;
 
 import android.app.Dialog;
+import android.text.InputFilter;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
@@ -48,8 +49,11 @@ import com.rxjava.rxlife.RxLife;
 import com.wuhenzhizao.titlebar.widget.CommonTitleBar;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -130,10 +134,11 @@ public class NewGoodsActivity extends BaseActvity implements CommonTitleBar.OnTi
     BasePopupView mBasePopupView;
     TimePickerView mTimePickerView;
     //科目，房间，柜子 ,用途 ，属性
-    private String subjectId = "", buildingId = "", cabinetId = "", usageId = "", attributeId = "";
+    private String subjectId = "", buildingId = "", usageId = "", attributeId = "";
     private GoodsCodePopup mGoodsCodePopup;
     private GoodsBean mGoodsBean;
-
+    @Autowired(name = Constant.CABINET_ID)
+    String cabinetId;
     @Override
     public int getLayoutId() {
         return R.layout.new_goods_layout;
@@ -155,7 +160,17 @@ public class NewGoodsActivity extends BaseActvity implements CommonTitleBar.OnTi
             svGoodsLocation.setRightString("");
         });
 
-
+        InputFilter[] filters = etGoodsUnit.getFilters();
+        ArrayList<InputFilter> list = new ArrayList<>(Arrays.asList(filters));
+        list.add((charSequence, i, i1, spanned, i2, i3) -> {
+            String regex = "[0-9]";
+            Pattern p = Pattern.compile(regex);
+            Matcher m = p.matcher(charSequence);
+            String str = m.replaceAll("").trim();
+            return str;
+        });
+        InputFilter[] newFilter = new InputFilter[list.size()];
+        etGoodsUnit.setFilters(list.toArray(newFilter));
         nestedScrollview.setOnScrollChangeListener((NestedScrollView.OnScrollChangeListener) (v, scrollX, scrollY, oldScrollX, oldScrollY) -> {
             hideKeyboard(nestedScrollview);
         });

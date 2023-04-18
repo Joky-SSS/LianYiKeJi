@@ -364,7 +364,12 @@ public class LabelPrintActivity extends BaseActvity implements OnRefreshLoadMore
                 break;
             case R.id.bt_label_print:
                 if (mJCAPI.isConnection() == 0) {
-                    loadLabelCode(printType, getSelectGoodsIds(mLabelPrintAdapter));
+                    List<GoodsBean> goodsBeanList = getSelectGoodsIds(mLabelPrintAdapter);
+                    if (goodsBeanList.isEmpty()){
+                        showToastFailure("请选择物品");
+                    }else{
+                        loadLabelCode(printType, goodsBeanList);
+                    }
                 } else {
                     showToastFailure("请先连接打印机");
                 }
@@ -442,9 +447,9 @@ public class LabelPrintActivity extends BaseActvity implements OnRefreshLoadMore
         //画二维码
         mJCAPI.drawLabelQrCode(32, 2, 16, 16, goodsBean.getBarcodeUrl(), 31, 0);//二维码
         //字号 2.5f
-        mJCAPI.drawLabelText(2, 2, 22, 5, "编号:" + (TextUtils.isEmpty(goodsBean.getCode()) ? "" : goodsBean.getCode()), "宋体", 2.5f, 0, 0, 0, 6, 0, 1, new boolean[]{false, false, false, false});
-        mJCAPI.drawLabelText(2, 7, 22, 6, "名称:" + (TextUtils.isEmpty(goodsBean.getName()) ? "" : goodsBean.getName()), "宋体", 2.5f, 0, 0, 1, 6, 0, 1, new boolean[]{false, false, false, false});
-        mJCAPI.drawLabelText(2, 13, 22, 5, "规格:" + (TextUtils.isEmpty(goodsBean.getSpec()) ? "" : goodsBean.getSpec()), "宋体", 2.5f, 0, 0, 2, 6, 0, 1, new boolean[]{false, false, false, false});
+        mJCAPI.drawLabelText(2, 2, 22, 5, "编号:" + (TextUtils.isEmpty(goodsBean.getCode()) ? "" : goodsBean.getCode()), "宋体", 2.5f, 0, 0, 0, 3, 0, 1, new boolean[]{false, false, false, false});
+        mJCAPI.drawLabelText(2, 7, 22, 6, "名称:" + (TextUtils.isEmpty(goodsBean.getName()) ? "" : goodsBean.getName()), "宋体", 2.5f, 0, 0, 1, 3, 0, 1, new boolean[]{false, false, false, false});
+        mJCAPI.drawLabelText(2, 13, 22, 5, "规格:" + (TextUtils.isEmpty(goodsBean.getSpec()) ? "" : goodsBean.getSpec()), "宋体", 2.5f, 0, 0, 2, 3, 0, 1, new boolean[]{false, false, false, false});
 
         //生成打印数据
         byte[] jsonByte = mJCAPI.generateLabelJson();
@@ -466,10 +471,10 @@ public class LabelPrintActivity extends BaseActvity implements OnRefreshLoadMore
         //画二维码
         mJCAPI.drawLabelQrCode(32, 2, 16, 16, goodsBean.getBarcodeUrl(), 31, 0);//二维码
         //字号 2.5f
-        mJCAPI.drawLabelText(2, 2, 22, 4, "编号:" + (TextUtils.isEmpty(goodsBean.getCode()) ? "" : goodsBean.getCode()), "宋体", 2.5f, 0, 0, 0, 6, 0, 1, new boolean[]{false, false, false, false});
-        mJCAPI.drawLabelText(2, 6, 22, 4, "名称:" + (TextUtils.isEmpty(goodsBean.getName()) ? "" : goodsBean.getName()), "宋体", 2.5f, 0, 0, 1, 6, 0, 1, new boolean[]{false, false, false, false});
-        mJCAPI.drawLabelText(2, 10, 22, 4, "规格:" + (TextUtils.isEmpty(goodsBean.getSpec()) ? "" : goodsBean.getSpec()), "宋体", 2.5f, 0, 0, 2, 6, 0, 1, new boolean[]{false, false, false, false});
-        mJCAPI.drawLabelText(2, 14, 22, 4, "房间:" + (TextUtils.isEmpty(goodsBean.getBuildingName()) ? "" : goodsBean.getBuildingName()), "宋体", 2.5f, 0, 0, 2, 6, 0, 1, new boolean[]{false, false, false, false});
+        mJCAPI.drawLabelText(2, 2, 22, 4, "编号:" + (TextUtils.isEmpty(goodsBean.getCode()) ? "" : goodsBean.getCode()), "宋体", 2.5f, 0, 0, 0, 3, 0, 1, new boolean[]{false, false, false, false});
+        mJCAPI.drawLabelText(2, 6, 22, 4, "名称:" + (TextUtils.isEmpty(goodsBean.getName()) ? "" : goodsBean.getName()), "宋体", 2.5f, 0, 0, 1, 3, 0, 1, new boolean[]{false, false, false, false});
+        mJCAPI.drawLabelText(2, 10, 22, 4, "规格:" + (TextUtils.isEmpty(goodsBean.getSpec()) ? "" : goodsBean.getSpec()), "宋体", 2.5f, 0, 0, 2, 3, 0, 1, new boolean[]{false, false, false, false});
+        mJCAPI.drawLabelText(2, 14, 22, 4, "房间:" + (TextUtils.isEmpty(goodsBean.getBuildingName()) ? "" : goodsBean.getBuildingName()), "宋体", 2.5f, 0, 0, 2, 3, 0, 1, new boolean[]{false, false, false, false});
 
         //生成打印数据
         byte[] jsonByte = mJCAPI.generateLabelJson();
@@ -500,15 +505,15 @@ public class LabelPrintActivity extends BaseActvity implements OnRefreshLoadMore
         //画二维码
         mJCAPI.drawLabelQrCode(38, 8, 10, 10, goodsBean.getBarcodeUrl(), 31, 0);//二维码
         //字号 2.5f
-        mJCAPI.drawLabelText(1, 1, 48, 6, TextUtils.isEmpty(goodsBean.getName()) ? "" : goodsBean.getName(), "宋体", 2.5f, 0, 1, 1, 6, 0, 1, new boolean[]{false, false, false, false});
-        mJCAPI.drawLabelText(1, 7, 6, 3, "编号:", "宋体", 2.5f, 0, 1, 1, 6, 0, 1, new boolean[]{false, false, false, false});
-        mJCAPI.drawLabelText(7, 7, 30, 3, (TextUtils.isEmpty(goodsBean.getCode()) ? "" : goodsBean.getCode()), "宋体", 2.5f, 0, 0, 1, 6, 0, 1, new boolean[]{false, false, false, false});
-        mJCAPI.drawLabelText(1, 10, 6, 3, "规格:", "宋体", 2.5f, 0, 1, 1, 6, 0, 1, new boolean[]{false, false, false, false});
-        mJCAPI.drawLabelText(7, 10, 30, 3, (TextUtils.isEmpty(goodsBean.getSpec()) ? "" : goodsBean.getSpec()), "宋体", 2.5f, 0, 0, 1, 6, 0, 1, new boolean[]{false, false, false, false});
-        mJCAPI.drawLabelText(1, 13, 6, 3, "房间:", "宋体", 2.5f, 0, 1, 1, 6, 0, 1, new boolean[]{false, false, false, false});
-        mJCAPI.drawLabelText(7, 13, 30, 3, (TextUtils.isEmpty(goodsBean.getBuildingName()) ? "" : goodsBean.getBuildingName()), "宋体", 2.5f, 0, 0, 1, 6, 0, 1, new boolean[]{false, false, false, false});
-        mJCAPI.drawLabelText(1, 16, 6, 3, "柜子:", "宋体", 2.5f, 0, 1, 1, 6, 0, 1, new boolean[]{false, false, false, false});
-        mJCAPI.drawLabelText(7, 16, 30, 3, (TextUtils.isEmpty(goodsBean.getContainerName()) ? "" : goodsBean.getContainerName()), "宋体", 2.5f, 0, 0, 1, 6, 0, 1, new boolean[]{false, false, false, false});
+        mJCAPI.drawLabelText(1, 1, 48, 6, TextUtils.isEmpty(goodsBean.getName()) ? "" : goodsBean.getName(), "宋体", 2.5f, 0, 1, 1, 3, 0, 0, new boolean[]{false, false, false, false});
+        mJCAPI.drawLabelText(1, 7, 6, 3, "编号:", "宋体", 2.5f, 0, 1, 1, 3, 0, 0, new boolean[]{false, false, false, false});
+        mJCAPI.drawLabelText(7, 7, 30, 3, (TextUtils.isEmpty(goodsBean.getCode()) ? "" : goodsBean.getCode()), "宋体", 2.5f, 0, 0, 1, 3, 0, 0, new boolean[]{false, false, false, false});
+        mJCAPI.drawLabelText(1, 10, 6, 3, "规格:", "宋体", 2.5f, 0, 1, 1, 3, 0, 0, new boolean[]{false, false, false, false});
+        mJCAPI.drawLabelText(7, 10, 30, 3, (TextUtils.isEmpty(goodsBean.getSpec()) ? "" : goodsBean.getSpec()), "宋体", 2.5f, 0, 0, 1, 3, 0, 0, new boolean[]{false, false, false, false});
+        mJCAPI.drawLabelText(1, 13, 6, 3, "房间:", "宋体", 2.5f, 0, 1, 1, 3, 0, 0, new boolean[]{false, false, false, false});
+        mJCAPI.drawLabelText(7, 13, 30, 3, (TextUtils.isEmpty(goodsBean.getBuildingName()) ? "" : goodsBean.getBuildingName()), "宋体", 2.5f, 0, 0, 1, 3, 0, 0, new boolean[]{false, false, false, false});
+        mJCAPI.drawLabelText(1, 16, 6, 3, "柜子:", "宋体", 2.5f, 0, 1, 1, 3, 0, 0, new boolean[]{false, false, false, false});
+        mJCAPI.drawLabelText(7, 16, 30, 3, (TextUtils.isEmpty(goodsBean.getContainerName()) ? "" : goodsBean.getContainerName()), "宋体", 2.5f, 0, 0, 1, 3, 0, 0, new boolean[]{false, false, false, false});
 
         //生成打印数据
         byte[] jsonByte = mJCAPI.generateLabelJson();
@@ -534,14 +539,14 @@ public class LabelPrintActivity extends BaseActvity implements OnRefreshLoadMore
         //画二维码
         mJCAPI.drawLabelQrCode(3, 3, 20, 20, goodsBean.getBarcodeUrl(), 31, 0);//二维码
         //字号 2.5f
-        mJCAPI.drawLabelText(26, 3.5f, 22, 3, "名称:" + (TextUtils.isEmpty(goodsBean.getName()) ? "" : goodsBean.getName()), "宋体", 2.5f, 0, 0, 0, 3, 0, 1, new boolean[]{false, false, false, false});
+        mJCAPI.drawLabelText(26, 3.5f, 22, 3, "名称:" + (TextUtils.isEmpty(goodsBean.getName()) ? "" : goodsBean.getName()), "宋体", 2.5f, 0, 0, 0, 3, 0, 0, new boolean[]{false, false, false, false});
         mJCAPI.drawLabelLine(25, 9, 24, 0.2f, 0, 1, new float[]{0.7575f, 0.7575f});
-        mJCAPI.drawLabelText(26, 11.5f, 22, 3, "科目:" + (TextUtils.isEmpty(goodsBean.getSubjectName()) ? "" : goodsBean.getSubjectName()), "宋体", 2.5f, 0, 0, 0, 3, 0, 1, new boolean[]{false, false, false, false});
+        mJCAPI.drawLabelText(26, 11.5f, 22, 3, "科目:" + (TextUtils.isEmpty(goodsBean.getSubjectName()) ? "" : goodsBean.getSubjectName()), "宋体", 2.5f, 0, 0, 0, 3, 0, 0, new boolean[]{false, false, false, false});
         mJCAPI.drawLabelLine(25, 17, 24, 0.2f, 0, 1, new float[]{0.7575f, 0.7575f});
-        mJCAPI.drawLabelText(26, 19.5f, 22, 3, "房间:" + (TextUtils.isEmpty(goodsBean.getBuildingName()) ? "" : goodsBean.getBuildingName()), "宋体", 2.5f, 0, 0, 0, 3, 0, 1, new boolean[]{false, false, false, false});
+        mJCAPI.drawLabelText(26, 19.5f, 22, 3, "房间:" + (TextUtils.isEmpty(goodsBean.getBuildingName()) ? "" : goodsBean.getBuildingName()), "宋体", 2.5f, 0, 0, 0, 3, 0, 0, new boolean[]{false, false, false, false});
         mJCAPI.drawLabelLine(1, 25, 48, 0.2f, 0, 1, new float[]{0.7575f, 0.7575f});
         //底部说明 居中对齐 垂直居中
-        mJCAPI.drawLabelText(1, 25.5f, 48, 3, "※请保护学校财产,不要损坏此标签※", "宋体", 2.5f, 0, 1, 0, 3, 0, 1, new boolean[]{false, false, false, false});
+        mJCAPI.drawLabelText(1, 25.5f, 48, 3, "※请保护学校财产,不要损坏此标签※", "宋体", 2.5f, 0, 1, 0, 3, 0, 0, new boolean[]{false, false, false, false});
 
         //生成打印数据
         byte[] jsonByte = mJCAPI.generateLabelJson();
@@ -567,14 +572,14 @@ public class LabelPrintActivity extends BaseActvity implements OnRefreshLoadMore
         //画二维码
         mJCAPI.drawLabelQrCode(3, 3, 20, 20, goodsBean.getBarcodeUrl(), 31, 0);//二维码
         //字号 2.5f
-        mJCAPI.drawLabelText(26, 3.5f, 22, 3, "名称:" + (TextUtils.isEmpty(goodsBean.getName()) ? "" : goodsBean.getName()), "宋体", 2.5f, 0, 0, 0, 3, 0, 1, new boolean[]{false, false, false, false});
+        mJCAPI.drawLabelText(26, 3.5f, 22, 3, "名称:" + (TextUtils.isEmpty(goodsBean.getName()) ? "" : goodsBean.getName()), "宋体", 2.5f, 0, 0, 0, 3, 0, 0, new boolean[]{false, false, false, false});
         mJCAPI.drawLabelLine(25, 9, 24, 0.2f, 0, 1, new float[]{0.7575f, 0.7575f});
-        mJCAPI.drawLabelText(26, 11.5f, 22, 3, "规格:" + (TextUtils.isEmpty(goodsBean.getSpec()) ? "" : goodsBean.getSpec()), "宋体", 2.5f, 0, 0, 0, 3, 0, 1, new boolean[]{false, false, false, false});
+        mJCAPI.drawLabelText(26, 11.5f, 22, 3, "规格:" + (TextUtils.isEmpty(goodsBean.getSpec()) ? "" : goodsBean.getSpec()), "宋体", 2.5f, 0, 0, 0, 3, 0, 0, new boolean[]{false, false, false, false});
         mJCAPI.drawLabelLine(25, 17, 24, 0.2f, 0, 1, new float[]{0.7575f, 0.7575f});
-        mJCAPI.drawLabelText(26, 19.5f, 22, 3, "保管人:" + (TextUtils.isEmpty(goodsBean.getUserName()) ? "" : goodsBean.getUserName()), "宋体", 2.5f, 0, 0, 0, 3, 0, 1, new boolean[]{false, false, false, false});
+        mJCAPI.drawLabelText(26, 19.5f, 22, 3, "保管人:" + (TextUtils.isEmpty(goodsBean.getUserName()) ? "" : goodsBean.getUserName()), "宋体", 2.5f, 0, 0, 0, 3, 0, 0, new boolean[]{false, false, false, false});
         mJCAPI.drawLabelLine(1, 25, 48, 0.2f, 0, 1, new float[]{0.7575f, 0.7575f});
         //底部说明 居中对齐 垂直居中
-        mJCAPI.drawLabelText(1, 25.5f, 48, 3, "※请保护学校财产,不要损坏此标签※", "宋体", 2.5f, 0, 1, 0, 3, 0, 1, new boolean[]{false, false, false, false});
+        mJCAPI.drawLabelText(1, 25.5f, 48, 3, "※请保护学校财产,不要损坏此标签※", "宋体", 2.5f, 0, 1, 0, 3, 0, 0, new boolean[]{false, false, false, false});
 
         //生成打印数据
         byte[] jsonByte = mJCAPI.generateLabelJson();

@@ -85,7 +85,7 @@
             android:drawablePadding="20dp"
             android:gravity="center_vertical"
             android:paddingStart="@dimen/dp_10"
-            android:text="信息电教1"
+            android:text="信息电教3"
             android:textColor="@color/color_444444"
             android:textSize="12sp" />
 

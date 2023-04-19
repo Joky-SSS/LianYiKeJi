@@ -17,7 +17,7 @@
     <string name="str_add_goods">选择\n物品</string>
     <string name="str_new_goods">新增\n物品</string>
     <string name="str_unit_price">单价:%s元</string>
-    <string name="str_location">存放位置:%s</string>
+    <string name="str_location">存放层格:%s</string>
     <string name="str_depository">保管人:%s</string>
     <string name="str_goods_details">%1s|%2s|%3s</string>
     <string name="str_create_cabinet">请输入柜子名称</string>

@@ -137,9 +137,8 @@ public class SelectGoodsActivity extends BaseActvity implements RadioGroup.OnChe
         mBuildingAdapter.setMaxSelectionCount(1);
         mBuildingAdapter.setMode(EasyAdapter.Mode.SINGLE_SELECT);
         rvBuildingTag.setAdapter(mBuildingAdapter);
-
-
         initRecycleView();
+
     }
 
     @Override
@@ -523,6 +522,7 @@ public class SelectGoodsActivity extends BaseActvity implements RadioGroup.OnChe
                 datum.setBuildingId(mListBean.getId());
                 datum.setTargetQuantity("1");
                 datum.setTaskId(mTaskBean.getId());
+                datum.setContainerId(cabinetId);
                 selectGoods.add(datum);
             }
         }

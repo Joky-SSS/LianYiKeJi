@@ -230,7 +230,7 @@ public class GoodsActivity extends BaseActvity implements CommonTitleBar.OnTitle
             public void onTabSelected(TabLayout.Tab tab) {
                 int position = cabinetTabLayout.getSelectedTabPosition();
                 selectCabinet = cabinetBeanList.get(position);
-                refreshLayout.autoRefresh();
+                onRefresh(refreshLayout);
             }
 
             @Override
@@ -239,6 +239,9 @@ public class GoodsActivity extends BaseActvity implements CommonTitleBar.OnTitle
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
+                int position = cabinetTabLayout.getSelectedTabPosition();
+                selectCabinet = cabinetBeanList.get(position);
+                onRefresh(refreshLayout);
             }
         });
         setTabData();
@@ -441,6 +444,7 @@ public class GoodsActivity extends BaseActvity implements CommonTitleBar.OnTitle
                 .as(RxLife.asOnMain(this))
                 .subscribe(response -> {
                     showToastSuccess("复制成功");
+                    OttoBus.getInstance().post(new BusData(OTTOTags.REFRESH_TAGS, ""));
                     refreshLayout.autoRefresh();
                 }, throwable -> {
                     ParseException exception = (ParseException) throwable;
@@ -463,6 +467,7 @@ public class GoodsActivity extends BaseActvity implements CommonTitleBar.OnTitle
                 .as(RxLife.asOnMain(this))
                 .subscribe(response -> {
                     showToastSuccess("删除成功");
+                    OttoBus.getInstance().post(new BusData(OTTOTags.REFRESH_TAGS, ""));
                     mGoodsListAdapter.removeAt(adapterPosition);
 //                    totalCount();
                 }, throwable -> {
@@ -515,7 +520,6 @@ public class GoodsActivity extends BaseActvity implements CommonTitleBar.OnTitle
     public void onRefresh(@NonNull RefreshLayout refreshLayout) {
         pageNo = 1;
         getSearchGood(true, queryStr, mListBean.getId());
-
     }
 
     @Override

@@ -44,7 +44,7 @@ public class AddressPopup extends BottomPopupView {
 
         btConfirm.setOnClickListener(v -> {
             if (mOnAddressListener != null) {
-                mOnAddressListener.onAddress(TextUtils.isEmpty(etLocationAddres.getText().toString()) ? mString : mString + "|" + etLocationAddres.getText().toString());
+                mOnAddressListener.onAddress(etLocationAddres.getText().toString());
             }
             dismiss();
         });

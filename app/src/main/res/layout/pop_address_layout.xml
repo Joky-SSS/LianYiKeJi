@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="5dp"
-        android:text="请填写存放位置"
+        android:text="请填写存放层格"
         android:textColor="@color/black"
         android:textSize="18sp" />
 
@@ -46,7 +46,7 @@
             android:layout_marginStart="30dp"
             android:background="@drawable/item_line_layout"
             android:gravity="left"
-            android:hint="请填写存放位置"
+            android:hint="请填写存放层格"
             android:padding="5dp"
             android:textColor="@color/black"
             android:textSize="14sp"

@@ -52,6 +52,10 @@
                 android:layout_width="200dp"
                 android:layout_height="125dp"
                 android:src="@drawable/xxdj2" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="200dp"
+                android:layout_height="125dp"
+                android:src="@drawable/xxdj3" />
 
         </LinearLayout>
 
@@ -65,7 +69,7 @@
                 android:id="@+id/rg_goods_types"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:checkedButton="@id/rb_label_type_xxdj_1"
+                android:checkedButton="@id/rb_label_type_xxdj_3"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -160,6 +164,25 @@
                     android:button="@drawable/oval_checkbox_style"
                     android:layoutDirection="ltr"
                     android:text="信息电教标签2"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    android:textColor="@drawable/text_color_select"
+                    android:textDirection="ltr" />
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:id="@+id/rb_label_type_xxdj_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/oval_checkbox_style"
+                    android:layoutDirection="ltr"
+                    android:text="信息电教标签3"
                     android:layout_marginBottom="@dimen/dp_10"
                     android:textColor="@drawable/text_color_select"
                     android:textDirection="ltr" />

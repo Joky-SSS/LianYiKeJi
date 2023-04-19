@@ -536,7 +536,7 @@ public class NewGoodsActivity extends BaseActvity implements CommonTitleBar.OnTi
                         strings[i] = cabinetList.get(i).getName();
                     }
                     runOnUiThread(() -> new XPopup.Builder(NewGoodsActivity.this)
-                            .asBottomList("请选择存放位置", strings,
+                            .asBottomList("请选择存放层格", strings,
                                     (position, text) ->
                                     {
                                         new XPopup.Builder(this).asCustom(new AddressPopup(this, text).setOnAddressListener(address -> {

@@ -253,14 +253,14 @@
                 app:sLeftMaxEms="10"
                 app:sLeftTextColor="@color/color_444444"
                 app:sLeftTextSize="13sp"
-                app:sLeftTextString="存放位置"
+                app:sLeftTextString="存放层格"
                 app:sRightMaxEms="15"
                 app:sRightTextColor="@color/color_444444"
                 app:sRightTextSize="13sp"
                 app:sRightLines="1"
                 app:sRightIconRes="@drawable/icon_right_back"
                 app:sUseRipple="false"
-                tools:sRightTextString="存放位置" />
+                tools:sRightTextString="存放层格" />
 
 
             <RelativeLayout

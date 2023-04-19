@@ -177,6 +177,7 @@ public class GoodsDetailsActivity extends BaseActvity implements CommonTitleBar.
      */
     private void initGoods(GoodsBean goodsBean) {
         etGoodsSerialNumber.setText(goodsBean.getCode());
+        etGoodsSerialNumber.setSelection(etGoodsSerialNumber.getText().length());
         svGoodsName.setRightString(goodsBean.getName());
         svGoodsSpecifications.setRightString(goodsBean.getSpec());
         svGoodsUnit.setRightString(goodsBean.getUom());
@@ -408,7 +409,7 @@ public class GoodsDetailsActivity extends BaseActvity implements CommonTitleBar.
                         strings[i] = cabinetList.get(i).getName();
                     }
                     runOnUiThread(() -> new XPopup.Builder(GoodsDetailsActivity.this)
-                            .asBottomList("请选择存放位置", strings,
+                            .asBottomList("请选择存放层格", strings,
                                     (position, text) ->
                                     {
                                         new XPopup.Builder(this).asCustom(new AddressPopup(this, text).setOnAddressListener(address -> {

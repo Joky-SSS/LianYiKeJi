@@ -348,7 +348,7 @@ public class SelectGoodsActivity extends BaseActvity implements RadioGroup.OnChe
         RxHttp.get(ApiService.API_GOODS_COPY)
                 .add("ids", goodsId)
                 .add("buildingId", buildingId)
-                .add(cabinetId,cabinetId)
+                .add("cabinetId",cabinetId)
                 .asResponse(String.class)
                 .doOnSubscribe(disposable -> showLoading())  //请求开始，当前在主线程回调
                 .doFinally(this::hideLoading)
